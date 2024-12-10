@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+  --background-color: #fff5e1; /* Fondo claro, crema */
+  --background-dark: #1f1f1f; /* Fondo oscuro */
+  --primary-color: #f4a261; /* Color terracota */
+  --secondary-color: #264653; /* Color azul oscuro relajante */
+  --text-color: #333; /* Color del texto claro */
+  --text-color-dark: #f9f9f9; /* Color del texto oscuro */
+  --font-family: 'Poppins', sans-serif;
+  --section-padding: 60px;
+  --card-bg-color: #ffffff; /* Fondo de las tarjetas */
+  --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s; /* Transición de color */
+}
+
+/* Estilos del encabezado */
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--card-shadow);
+  transition: background 0.3s ease;
+}
+
+header:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.logo span {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Estilos de la navegación */
+.nav-bar {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Estilos de las secciones */
+.section {
+  padding: var(--section-padding) 20px;
+  text-align: center;
+  position: relative;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: white;
+}
+
+.home h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home p {
+  font-size: 1.2rem;
+}
+
+/* Estilos de las redes sociales */
+.social-media {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.social-media a {
+  color: #333;
+  font-size: 2em;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: #007bff;
+}
+
+/* Estilos de las tarjetas */
+.about, .skills, .projects, .contact {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill {
+  background: var(--primary-color);
+  border-radius: 5px;
+  color: rgb(230, 38, 38);
+  margin: 10px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 5px var(--card-shadow);
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+.skill i {
+  margin-right: 10px;
+}
+
+/* Estilos de las tarjetas de proyecto */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las tarjetas */
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.project-card {
+  background: white; /* Cambia el fondo a blanco */
+  border: 2px solid var(--primary-color); /* Añade borde */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 15px; /* Espaciado interno */
+  max-width: 250px; /* Ancho máximo de la tarjeta */
+  text-align: center; /* Centra el contenido de la tarjeta */
+}
+
+.project-image {
+  width: 100%; /* Ajusta la imagen al ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 5px; /* Bordes redondeados en la imagen */
+}
+
+/* Ajustes en el título y la descripción */
+.project-card h3 {
+  font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+  margin: 10px 0; /* Espaciado entre el título y la descripción */
+}
+
+.project-card p {
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  margin-bottom: 10px; /* Espacio entre la descripción y el botón */
+}
+
+.view-project-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.view-project-button:hover {
+  background-color: var(--secondary-color); /* Cambia el color al pasar el ratón */
+}
+
+
+/* Ajustes en el título y la descripción */
+.project-card h3 {
+  font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+  margin: 10px 0; /* Espaciado entre el título y la descripción */
+}
+
+.project-card p {
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  margin-bottom: 10px; /* Espacio entre la descripción y el botón */
+}
+
+.view-project-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.view-project-button:hover {
+  background-color: var(--secondary-color); /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos del tema oscuro */
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-theme header {
+  background: rgba(50, 50, 50, 0.8);
+}
+
+.dark-theme .nav-link {
+  color: var(--text-color-dark);
+}
+
+.dark-theme .section {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-theme .project-card {
+  background-color: #444;
+}
+
+.dark-theme .social-media a {
+  color: #fff;
+}
+
+/* Estilos del botón de cambio de tema */
+.theme-toggle {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.theme-toggle i {
+  margin-right: 8px;
+}
+
+/* Estilos de las categorías */
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.category {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category li {
+  margin-bottom: 10px;
+}
+
+/* Estilo del cuadrado del proyecto */
+.projects {
+  padding: 2rem;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+.project-card {
+  background: #fff; /* Color de fondo de las tarjetas */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Ancho fijo para las tarjetas */
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+.project-square {
+  width: 40px; /* Ajusta el tamaño del cuadrado */
+  height: 40px;
+  background: #007BFF; /* Color del cuadrado */
+  border-radius: 5px;
+  margin: 0 auto 10px; /* Centrando y separando del resto del contenido */
+}
+
+.project-image {
+  max-width: 100%; /* Imagen responsiva */
+  height: auto; /* Mantener proporciones */
+  border-radius: 5px; /* Bordes redondeados de la imagen */
+}
+
+.view-project-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.view-project-button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos del footer */
+.footer {
+  background-color: #282c34; /* Color de fondo oscuro */
+  color: #fff; /* Color del texto blanco */
+  text-align: center; /* Alinear texto al centro */
+  padding: 20px 0; /* Espaciado vertical */
+}
+
+.footer-content {
+  max-width: 800px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrar el contenido */
+}
+
+.footer-social-media {
+  margin-top: 10px; /* Espaciado superior */
+}
+
+.footer-social-media a {
+  color: #fff; /* Color de los íconos */
+  margin: 0 10px; /* Espacio entre íconos */
+  font-size: 1.5em; /* Tamaño de los íconos */
+  transition: color 0.3s; /* Efecto de transición */
+}
+
+.footer-social-media a:hover {
+  color: #007bff; /* Color al pasar el mouse */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    gap: 10px; /* Menor espacio entre habilidades */
+  }
+
+  .project-card {
+    width: 100px; /* Ancho más pequeño para pantallas pequeñas */
+    height: 100px; /* Alto más pequeño para pantallas pequeñas */
+  }
+}
+
+/* Estilos de la sección de contacto */
+.contact {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  padding: 30px;
+  margin: 20px 0;
+  text-align: center; /* Centrar el texto */
+  max-width: 600px; /* Limitar el ancho máximo */
+  margin: 20px auto; /* Centrar la sección en la página */
+}
+
+/* Ajustar el tamaño de los íconos en redes sociales */
+.social-media a {
+  font-size: 2em; /* Asegúrate de que el tamaño sea adecuado */
+  margin: 0 10px;
+}
+
